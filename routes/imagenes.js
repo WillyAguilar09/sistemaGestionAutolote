@@ -39,8 +39,8 @@ router.put('/imagenes/:codigo', (req, res) => {
         return res.status(403).json({ status: 403, message: 'Todos los campos son obligatorios' });
     }
 
-    const sql = 'UPDATE imagenes_vehiculos SET id_vehiculo = ?, url_image = ? WHERE id_imagen = ?';
-    pool.query(sql,[idVehiculo,urlImagen], (err, results) => {
+    const sql = 'UPDATE imagenes_vehiculos SET id_vehiculo = ?, url_imagen = ? WHERE id_imagen = ?';
+    pool.query(sql,[idVehiculo,urlImagen,req.params.codigo], (err, results) => {
             if (err) {
                 console.log(err);
                 return res.status(500).json({ status: 500, message: 'Error al actualizar la imagen...', error: err });
@@ -58,34 +58,34 @@ router.put('/imagenes/:codigo', (req, res) => {
         }
     );
 });
-router.delete('/ventas/:codigo',(req,res)=>{
+router.delete('/imagenes/:codigo',(req,res)=>{
     let codigo = req.params.codigo;
     if(!codigo){
-        return res.status(403).json({status:403,message:'El codigo de la venta es un parametro requerido...'});
+        return res.status(403).json({status:403,message:'El codigo de la imagen es un parametro requerido...'});
     }
 
-    const sql ="DELETE FROM ventas WHERE id_venta = ?";
+    const sql ="DELETE FROM imagenes_vehiculos WHERE id_imagen = ?";
     pool.query(sql,[codigo],(err, results)=>{
         if(err){
             console.log(err);
-            return res.status(500).json({status:500,message:'Error al eliminar la venta...'});
+            return res.status(500).json({status:500,message:'Error al eliminar la imagen...'});
         }
 
         if(results.affectedRows === 0){
-            return res.status(404).json({status:404,message:'Venta no encontrada...'});
+            return res.status(404).json({status:404,message:'imagen no encontrada...'});
         }
         
-        res.status(201).json({status:201,message:'Venta eliminada con exito'});        
+        res.status(201).json({status:201,message:'imagen eliminada con exito'});        
     });
 });
 
-router.get('/ventas/:codigo',(req,res)=>{
+router.get('/imagenes/:codigo',(req,res)=>{
     let codigo = req.params.codigo;
     if(!codigo){
         return res.status(403).json({status:403,message:'El codigo del cliente es un parametro requerido...'});
     }
 
-    const sql ="SELECT * FROM ventas WHERE id_venta = ?";
+    const sql ="SELECT * FROM imagenes_vehiculos WHERE id_imagen = ?";
     pool.query(sql,[codigo],(err, results)=>{
         if(err){
             console.log(err);
