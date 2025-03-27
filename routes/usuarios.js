@@ -65,4 +65,21 @@ router.delete('/usuarios/:codigo',(req,res)=>{
         res.status(201).json({status:201,message:'Usuario eliminado con exito'});        
     });
 });
+router.get('/usuarios/:codigo',(req,res)=>{
+    let codigo = req.params.codigo;
+    if(!codigo){
+        return res.status(403).json({status:403,message:'El codigo del vehiculo es un parametro requerido...'});
+    }
+
+    const sql ="SELECT * FROM usuarios WHERE id_usuario = ?";
+    pool.query(sql,[codigo],(err, results)=>{
+        if(err){
+            console.log(err);
+            return res.status(500).json({status:500,message:'Error al intentar leer el registro...'});
+        }
+        
+        res.status(200).json({status:200,message:'Success',results});        
+    });
+});
+
 module.exports=router;
