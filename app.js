@@ -6,12 +6,14 @@ const vehiculosRoutes = require('./routes/vehiculos');
 const authRoutes =require('./routes/authUser')
 const clientesRoutes=require('./routes/clientes')
 const ventasRoutes=require('./routes/ventas')
+const imagenesRoutes=require('./routes/imagenes')
 app.use(express.json());
 app.use('/api',usuarioRoutes)
 app.use('/api',vehiculosRoutes)
 app.use('/api',authRoutes)
 app.use('/api',clientesRoutes)
 app.use('/api',ventasRoutes)
+app.use('/api',imagenesRoutes)
 
 
 
