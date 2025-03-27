@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "b8f04dde-7520-44b6-8d68-b81c98d92564",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38911696"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "getUsuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsuariosParams",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/usuarios/8"
+					},
+					"response": []
+				},
+				{
+					"name": "postUsuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \r\n            \"nombre\": \"Wilmer Javier Aguilar Dominguez\",\r\n            \"correo\": \"jwsellbycar@gmail.com\",\r\n            \"contraseña\": \"muchosPuntos\",\r\n            \"rol\": \"cliente\",\r\n            \"fecha_creacion\": \"2025-03-26\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/usuarios/9"
+					},
+					"response": []
+				},
+				{
+					"name": "putUsuarios",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \r\n            \"nombre\": \"Wilmer Javier Aguilar Dominguez\",\r\n            \"correo\": \"jwsellbycar@gmail.com\",\r\n            \"contraseña\": \"muchosPuntos\",\r\n            \"rol\": \"cliente\",\r\n            \"fecha_creacion\": \"2025-03-26\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/usuarios/8"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUsuarios",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/usuarios/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "getClientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/clientes/3"
+					},
+					"response": []
+				},
+				{
+					"name": "getClientesParams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/clientes/3"
+					},
+					"response": []
+				},
+				{
+					"name": "postClientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \r\n            \"nombre\": \"Jose Martinez\",\r\n            \"correo\": \"joseMartineez@example.com\",\r\n            \"telefono\": \"93456789\",\r\n            \"fecha_registro\": \"2025-03-26\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "putClientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \r\n            \"nombre\": \"Jose Martinez\",\r\n            \"correo\": \"joseMaartineez@example.com\",\r\n            \"telefono\": \"93456789\",\r\n            \"fecha_registro\": \"2025-03-26\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/clientes/3"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteClientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/clientes/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehiculos",
+			"item": [
+				{
+					"name": "PutVehiculos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
